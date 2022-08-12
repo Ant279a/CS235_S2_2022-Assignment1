@@ -1,9 +1,12 @@
 class Artist:
     def __init__(self, artist_id: int, full_name: str):
-        if artist_id < 0 or not instanceof(artist_id, int):
-            raise ValueError("Artist id must be a positive integer") 
+        if artist_id < 0 or not isinstance(artist_id, int):
+            raise ValueError()
         self.__artist_id: int = artist_id
-        self.__full_name = None
+        if (not isinstance(full_name, str)):
+            self.__full_name: str = None
+        else:
+            self.__full_name = full_name.strip()
 
     @property
     def artist_id(self) -> int:
@@ -15,7 +18,7 @@ class Artist:
 
     @full_name.setter
     def full_name(self, new_full_name):
-        if new_full_name == "" or not instanceof(new_full_name, str):
+        if new_full_name == "" or not isinstance(new_full_name, str):
             self.__full_name = None
         else:
             self.__full_name = new_full_name
@@ -34,3 +37,10 @@ class Artist:
 
     def __hash__(self):
         return hash(self.artist_id)
+
+
+artist1 = Artist(1, 'Tailor Swift  ')
+print(artist1)
+artist2 = Artist(2, "Maroon 5")
+print(artist2)
+print(artist1 == artist2)
