@@ -2,4 +2,6 @@ from domainmodel.artist import Artist
 
 
 class Track:
-    pass
+
+    def __init__(self, )
+
