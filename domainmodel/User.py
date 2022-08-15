@@ -69,16 +69,4 @@ class User:
     def __lt__(self, other):
         return self.__user_id < other.__user_id
     
-user1 = User(123, 'Shyamli', 'pw12345')
-user2 = User(345, 'asma', 'pw67890')
-user3 = User(567, 'Daniel', 'pw87465')
-album1 = Album(15, 'Justice')
-artist1 = Artist(1, 'Tailor Swift')
-track1 = Track(1, 'As it Was ')
-review1 = Review(track1, 10, 3)
-review2 = Review(track1, 9, 4)
-user1.add_review(review1)
-user1.remove_review(review2)
-print(user1.reviews)
-    
     
