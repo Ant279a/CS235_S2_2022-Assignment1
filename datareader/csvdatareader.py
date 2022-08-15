@@ -10,11 +10,11 @@ from Genre import Genre
 class TrackCSVReader:
 
     def __init__(self, albums_csv_file: str, tracks_csv_file: str):
-        if os.path.exists(f"./{albums_csv_file}"):
+        if os.path.exists(f"{albums_csv_file}"):
             self.albums_csv_file = albums_csv_file
         else:
             self.__albums_csv_file = None
-        if os.path.exists(f"./{tracks_csv_file}"):
+        if os.path.exists(f"{tracks_csv_file}"):
             self.tracks_csv_file = tracks_csv_file
         else:
             self.__tracks_csv_file = None
@@ -45,7 +45,7 @@ class TrackCSVReader:
 
     def read_csv_files(self):
         # Reading albums csv file
-        with open("./{tracks_csv_file}.csv", encoding = 'ISO-8859-1') as csvfile:
+        with open(self.albums_csv_file, encoding = 'ISO-8859-1') as csvfile:
             reader = csv.DictReader(csvfile)
 
             for row in reader:
@@ -69,7 +69,7 @@ class TrackCSVReader:
                     self.__dataset_of_albums.add(current_album)
 
         # Reading tracks csv file
-        with open("./{tracks_csv_file}.csv", encoding = 'ISO-8859-1') as csvfile:
+        with open(self.tracks_csv_file, encoding = 'ISO-8859-1') as csvfile:
             reader = csv.DictReader(csvfile)
 
             for row in reader:
