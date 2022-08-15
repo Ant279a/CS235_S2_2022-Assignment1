@@ -9,7 +9,7 @@ class Album:
 
     def __init__(self, album_id, title):
         try:
-            if (album_id < 0 or not isinstance(album_id, int)):
+            if (album_id < 0 or not isinstance(type(album_id), int)):
                 raise ValueError("ValueError")
             self.__album_id = album_id
             self.title = title
