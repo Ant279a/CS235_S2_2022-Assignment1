@@ -30,11 +30,10 @@ class Artist:
     def __eq__(self, other):
         if not isinstance(other, self.__class__):
             return False
-        return self.artist_id is other.artist_id
+        return self.__artist_id == other.__artist_id
 
     def __lt__(self, other):
         return self.artist_id < other.artist_id
 
     def __hash__(self):
         return hash(self.artist_id)
-
